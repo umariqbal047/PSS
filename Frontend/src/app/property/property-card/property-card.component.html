@@ -1,5 +1,17 @@
 <div class="card" style="width: 19rem;">
-  <img class="card-img-top" src="assets/images/house_default.jpg" alt="Property Image">
+  <div class="img-wrapper position-relative">
+    <img class="card-img-top" src="assets/images/house_default.jpg" alt="Property Image">
+    <div class="button-container">
+      <ul class="list-inline-item member-icons">
+        <li class="list-inline-item">
+          <button class="btn btn-primary">E</button>
+        </li>
+        <li class="list-inline-item">
+          <button class="btn btn-primary">C</button>
+        </li>
+      </ul>
+    </div>
+  </div>
   <div class="card-body">
     <h5 class="card-title">{{ property.Name }}</h5>
     <p class="card-subtitle">{{ property.Type }}</p>
