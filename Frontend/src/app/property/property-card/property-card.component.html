@@ -1,6 +1,7 @@
 <div class="card" style="width: 19rem;">
   <div class="img-wrapper position-relative">
-    <img class="card-img-top" src="assets/images/house_default.jpg" alt="Property Image">
+    <!-- <img *ngIf="property.Image" class="card-img-top" src="assets/images/{{property.Image}}.jpg" alt="Property Image"> -->
+    <img *ngIf="!property.Image" class="card-img-top" src="assets/images/house_default.jpg" alt="Property Image">
     <div class="button-container">
       <ul class="list-inline-item member-icons">
         <li class="list-inline-item">
