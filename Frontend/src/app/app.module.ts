@@ -14,7 +14,7 @@ import { PropertyDetailComponent } from './property/property-detail/property-det
 const appRoutes: Routes = [ // Define as an array of Routes
   { path: '', component: PropertyListComponent },
   { path: 'add-property', component: AddPropertyComponent },
-  { path: 'rent-property', component: PropertyCardComponent },
+  { path: 'rent-property', component: PropertyListComponent },
   { path: 'property-detail/:id', component: PropertyDetailComponent },
   { path: '**', component: PropertyListComponent }
 ];
