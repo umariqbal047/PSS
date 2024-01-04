@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, AbstractControl, ValidationErrors, Validators, FormBuilder } from '@angular/forms';
+import { UserServiceService } from 'src/app/services/user-service.service';
 
 @Component({
   selector: 'app-user-register',
@@ -11,7 +12,7 @@ export class UserRegisterComponent implements OnInit {
   registrationForm: FormGroup;
   user: any={};
 
-  constructor( private fb:FormBuilder) {
+  constructor( private fb:FormBuilder,private userService:UserServiceService) {
     this.registrationForm = new FormGroup({
       userName: new FormControl()
     });
@@ -63,22 +64,11 @@ get mobile(){
 onSubmit() {
   console.log(this.registrationForm.value);
   this.user = Object.assign({}, this.user, this.registrationForm.value);
-  this.addUser(this.user);
+  this.userService.addUser(this.user);
+  this.registrationForm.reset();
 }
 
-addUser(user: any) {
-  let users = [];
-  // Check if 'Users' exists in local storage and if it's a string.
-  const storedUsers = localStorage.getItem('Users');
-  if (typeof storedUsers === 'string') {
-    users = JSON.parse(storedUsers);
-    users = [user, ...users];
-  } else {
-    users = [user];
-  }
 
-  localStorage.setItem('Users', JSON.stringify(users));
-}
 
 
 }
